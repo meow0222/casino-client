@@ -1,0 +1,16 @@
+# misc files
+.DS_Store
+.env
+*.log
+.cache/
+
+.vscode
+
+# common prod directories
+/build
+/dist
+
+# common test directories
+/test
+/testing
+/coverage

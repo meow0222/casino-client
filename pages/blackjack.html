@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="/css/blackjack.css">
+</head>
+<body>
+    <section class="blackjack">
+        <h3>Blackjack</h3>
+        <div class="blackjack-body">
+            <div class="blackjack-options">
+                <input type="button" id="startBtn" class="btn" value="start">
+                <input type="button" class="btn" value="hit me" id="hitBtn">
+                <input type="button" class="btn" value="stay" id="stayBtn">
+            </div>
+            <div class="status" id="status"></div>
+            <div id="deck" class="deck">
+                <div id="deckcount">52</div>
+            </div>
+            <div id="players" class="players"></div>
+            <div class="clear"></div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="/js/blackjack.js"></script>
+</body>
+</html>
