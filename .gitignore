@@ -4,6 +4,8 @@
 *.log
 .cache/
 
+.vscode
+
 # common prod directories
 /build
 /dist
