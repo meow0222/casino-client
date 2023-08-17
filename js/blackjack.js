@@ -1,10 +1,11 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
     const hitBtn = document.getElementById('hitBtn');
     const stayBtn = document.getElementById('stayBtn');
     const startBtn = document.getElementById('startBtn');
 
     let currentPlayer = 0;
 
+    // create players
     function createPlayersUI(players) {
         document.getElementById('players').innerHTML = '';
         for(let i = 0; i < players.length; i++)
@@ -28,9 +29,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
+    // alternate handing cards to each player
+    // 2 cards each
     function dealHands(players, deck) {
-        // alternate handing cards to each player
-        // 2 cards each
         for(let i = 0; i < 2; i++)
         {
             for (let x = 0; x < players.length; x++)
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         updateDeck(deck);
     }
     
+    // rendering card
     function renderCard(card, player) {
         let hand = document.getElementById('hand_' + player);
         hand.appendChild(getCardUI(card));
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return points;
     }
     
+    // update player's point
     function updatePoints(players) {
         for (let i = 0 ; i < players.length; i++)
         {
@@ -85,10 +88,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
+    // update deck number
     function updateDeck(deck) {
         document.getElementById('deckcount').innerHTML = deck.length;
     }
 
+    // game end
     function end(players) {
         let winner = -1;
         let score = 0;
@@ -123,11 +128,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 // console.log("Response: ", response);
                 const deck = response.deck;
                 const players = response.players;
+                const colors = response.randomColor;
                 console.log(players);
                 currentPlayer = 0;
                 createPlayersUI(players);
                 dealHands(players, deck);
                 document.getElementById('player_' + currentPlayer).classList.add('active');
+                document.getElementById('blackjack').style.backgroundColor = colors;
+
                 // HIT ME
                 hitBtn.addEventListener('click', ()=>{
                     let card = deck.pop();
@@ -141,6 +149,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         end(players);
                     }
                 });
+                
                 // STAY
                 stayBtn.addEventListener('click', ()=>{
                     if (currentPlayer != players.length-1) {

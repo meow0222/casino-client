@@ -67,7 +67,6 @@ class Panel {
                 panelsLeft = 3;
                 checkWin();
             }
-            
         });
 
         section.appendChild(this.img);

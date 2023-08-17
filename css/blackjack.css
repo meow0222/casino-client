@@ -20,6 +20,7 @@
     border-radius:10px;
     text-transform: uppercase;
     cursor:pointer;
+    width: fit-content;
 }
 
 .blackjack .btn:hover{
