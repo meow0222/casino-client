@@ -1,3 +1,28 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const betBtn = document.getElementById('bet-button');
+
+
+    betBtn.addEventListener('click', () => {
+        $.ajax({
+            url: "http://localhost:8080/slotmachine",
+            type: "GET",
+            headers: {
+                "task": "bet-coin"
+            },
+            success: function(response) {
+                console.log("Response:", response);
+            },
+            error: function(error) {
+                console.error("Error:", error);
+            }
+        });
+    });
+})
+
+
+
+
+
 class Panel {
     constructor() {
         const section = document.createElement('section');
