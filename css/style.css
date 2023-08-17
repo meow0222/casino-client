@@ -5,21 +5,9 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ----------------------- Slot Machine section ------------------------- */
-.slotmachine-seciton {
+
+.slotmachine-section {
     font-size: 16px;
     background: #ecf0f1;
     width: 400px;
@@ -65,5 +53,14 @@
     user-select: none;
     margin: 0 auto;
 }
+
+.unmatched {
+    opacity: 0.5;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+/* ----------------------------------- END ---------------------------------------- */
 
 /* ----------------------------------- END ---------------------------------------- */

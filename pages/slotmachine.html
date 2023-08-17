@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Slot Machine</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <main>
-            <div class="slotmachine-seciton">
-                <section class="panel">
-                    <img src="imgs/seven.png" alt="The card of seven.">
-                    <div class="stop">STOP</div>
-                </section>
-                <section class="panel">
-                    <img src="imgs/seven.png" alt="The card of seven.">
-                    <div class="stop">STOP</div>
-                </section>
-                <section class="panel">
-                    <img src="imgs/seven.png" alt="The card of seven.">
-                    <div class="stop">STOP</div>
-                </section>
-            </div>
-        </main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main>
+        <div class="slotmachine-section" id="slot-area">
+        </div>
+    </main>
 
-        <div id="spin">Spin</div>
+    <div id="spin">Spin</div>
+    <button id="bet-button">Bet</button> <!-- ベットボタン -->
+    <input type="number" id="bet-input" placeholder="Bet amount"> <!-- ベット額入力欄 -->
+    <div id="result-display"></div> <!-- 結果表示のための要素 -->
+    <div id="coins-display"></div>
 
-        <script src="js/slot-machine.js"></script>
-    </body>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+    crossorigin="anonymous"></script>
+    <script src="../js/slot-machine.js"></script>
+</body>
 </html>
