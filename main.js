@@ -42,8 +42,8 @@ $(document).ready(function() {
     $('#signup-btn').click(function(e){
         e.preventDefault();
 
-        const username = $("#username").val();
-        const password = $("#password").val();
+        const username = $("#s-username").val();
+        const password = $("#s-password").val();
         const coins = $("#coins").val();
         const tickets = $("#tickets").val();
 
@@ -64,6 +64,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 console.log("Response:", response);
+                window.location.href = './';
                 $('#login').css("display", "flex");
                 $('#signup').css("display", "none");
             },
