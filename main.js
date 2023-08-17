@@ -4,31 +4,17 @@ $(document).ready(function() {
     $('#login-btn').click(function(e){
         e.preventDefault();
 
-        const username = $("input[type='text']").val();
-        const password = $("input[type='password']").val();
+        const username = $("#username").val();
+        const password = $("#password").val();
 
         console.log("Username:", username);
         console.log("Password:", password);
-
-        /*
-        const url = "http://localhost:3000/login";
-        
-        // query string
-        const params = new URLSearchParams({ username: username, password: password });
-
-        fetch(url + '?' + params.toString(), {
-            method: 'GET',
-            headers: {
-
-            }
-        })
-        */
 
         $.ajax({
             url: "http://localhost:8080/login",
             type: 'GET',
             headers: {
-                "task": "login" // custom header
+                "casino": "login" // custom header
             },
             data: {
                 username: username,
@@ -41,7 +27,8 @@ $(document).ready(function() {
                 if (response === "Login Successful") {
                     // Redirect to home.html
                     console.log("if condition for Login Successful triggered");
-                    window.location.href = "./pages/slotmachine.html";
+                    $('#main-content').css("display", "flex");
+                    $('#login').css("display", "none");
                 } else {
                     // Display "Login Failed"
                     alert(response);
@@ -57,8 +44,8 @@ $(document).ready(function() {
     $('#signup-btn').click(function(e){
         e.preventDefault();
 
-        const username = $("input[type='text']").val();
-        const password = $("input[type='password']").val();
+        const username = $("#username").val();
+        const password = $("#password").val();
 
         console.log("Username:", username);
         console.log("Password:", password);
@@ -67,7 +54,7 @@ $(document).ready(function() {
             url: "http://localhost:8080/login",
             type: 'POST',
             headers: {
-                "task": "signup" // custom header
+                "casino": "signup" // custom header
             },
             data: {
                 username: username,
@@ -75,7 +62,9 @@ $(document).ready(function() {
             },
             success: function(response) {
                 // if a success response is received, print it here:
-                console.log("Response:", response); 
+                console.log("Response:", response);
+                $('#login').css("display", "flex");
+                $('#signup').css("display", "none");
             },
             error: function(error) {
                 console.error("Error:", error);
@@ -83,21 +72,3 @@ $(document).ready(function() {
         });
     });
 });
-
-/* 
-$(document).ready(function() {
-    $('#sendGetReqBtn').click(function(){
-        $.ajax({
-            url: 'http://localhost:3000/',
-            type: 'GET',
-            success: function(response) {
-                $('#response').html(`<p>Response received!</p>`);
-                console.log('HTTP Response DataType: ', typeof(response));
-            },
-            error: function(error) {
-                $('#response').html(`<p>Error: ${error.statusText}</p>`);
-            }
-        });
-    });
-});
-*/

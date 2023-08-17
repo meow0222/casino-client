@@ -123,11 +123,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 // console.log("Response: ", response);
                 const deck = response.deck;
                 const players = response.players;
+                const colors = response.randomColor;
                 console.log(players);
                 currentPlayer = 0;
                 createPlayersUI(players);
                 dealHands(players, deck);
                 document.getElementById('player_' + currentPlayer).classList.add('active');
+                document.getElementById('blackjack').style.backgroundColor = colors;
                 // HIT ME
                 hitBtn.addEventListener('click', ()=>{
                     let card = deck.pop();

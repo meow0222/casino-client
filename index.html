@@ -4,34 +4,84 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script> 
-
-        <title>Client App</title>
+        <title>FAKE CASINO</title>
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/blackjack.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body class="bg-gray-100 h-screen flex justify-center items-center">
-        <div class="bg-white p-8 rounded-lg shadow-md w-96">
-            <h1 class="text-2xl font-bold mb-4">Login</h1>
-            <div class="space-y-4">
-                <input type="text" placeholder="Username" class="w-full p-2 border rounded-md">
-                <input type="password" placeholder="Password" class="w-full p-2 border rounded-md">
-                <button id="login-btn" class="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Login</button>  
-                <button id="signup-btn" class="w-full p-2 bg-green-500 text-white rounded-md hover:bg-green-600">Sign Up</button>
-            </div>
-        </div>
-        
-        <!--  
-        <button id="sendGetReqBtn">
-            Send GET Request</button>
-        <div id="response"></div>
-            -->
+    <body>
+        <h1>FAKE CASINO</h1>
+        <section class="login" id="login">
+            <h3>Login</h3>
+            <form>
+                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="submit" value="Login" id="login-btn">
+            </form>
+            <button id="go-signup">Do you wanna Sign up?</button>
+        </section>
+        <section class="signup" id="signup">
+            <h3>Signup</h3>
+            <form>
+                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <label for="coins">Coins: <input type="number" name="coins" id="coins"></label>
+                <label for="coins">Tickets: <input type="number" name="tickets" id="tickets"></label>
+                <input type="submit" value="Signup" id="signup-btn">
+            </form>
+            <button id="go-login">Do you wanna Log in?</button>
+        </section>
+        <section class="main-content" id="main-content">
+            <aside>
+                <nav>
+                    <button id="slot-btn">
+                        <i class="fa-solid fa-circle-dollar-to-slot"></i> Slot Machine</button>
+                    <button id="blackjack-btn">
+                        <i class="fa-solid fa-heart"></i> Blackjack
+                    </button>
+                </nav>
+                <!-- <div id="user-info">
+                    <p id="print-username"></p>
+                    <p id="print-coins"></p>
+                    <p id="print-tickets"></p>
+                    <input type="number" name="changeCoins" id="change-coins">
+                    <button id="change-btn">Change Coins</button>
+                </div> -->
+            </aside>
+            <section class="slotmachine" id="slotmachine">
+                <div class="slotmachine-section" id="slot-area"></div>
+                <div id="spin">Spin</div>
+                <button id="bet-button">Bet</button> <!-- ベットボタン -->
+                <input type="number" id="bet-input" placeholder="Bet amount"> <!-- ベット額入力欄 -->
+                <div id="result-display"></div> <!-- 結果表示のための要素 -->
+                <div id="coins-display"></div>
+            </section>
+            <section class="blackjack" id="blackjack">
+                <h3>Blackjack</h3>
+                <div class="blackjack-body">
+                    <div class="blackjack-options">
+                        <input type="button" id="startBtn" class="btn" value="start">
+                        <input type="button" class="btn" value="hit me" id="hitBtn">
+                        <input type="button" class="btn" value="stay" id="stayBtn">
+                    </div>
+                    <div class="status" id="status"></div>
+                    <div id="deck" class="deck">
+                        <div id="deckcount">52</div>
+                    </div>
+                    <div id="players" class="players"></div>
+                    <div class="clear"></div>
+                </div>
+            </section>
+        </section>
 
         <!-- jQuery 3.7.0 minified -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
         crossorigin="anonymous"></script>
-
         <script src="/main.js"></script>
+        <script src="js/layout.js"></script>
+        <script src="js/slot-machine.js"></script>
+        <script src="js/blackjack.js"></script>
     </body>
 </html>
