@@ -16,6 +16,14 @@ h1 {
     margin-bottom: 50px;
 }
 
+h3 {
+    text-transform: uppercase;
+}
+
+button, [type="submit"] {
+    cursor: pointer;
+}
+
 body > section {
     width: 80%;
 }
@@ -35,25 +43,41 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     width: 40%;
 }
 
 input {
     width: 100%;
-    padding: 2%;
+    padding: 3%;
     border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    outline: 2px solid #e7b900;
 }
 
 [type="submit"] {
     background-color: #e7b900;
     text-transform: uppercase;
     font-weight: 700;
+    border-radius: 10vw;
+    padding: 3%;
+    box-shadow: 0px 5px #e7a200;
+}
+
+[type="submit"]:hover {
+    box-shadow: 0px 2px #e7a200;
 }
 
 label {
-    display: flex;
+    display: grid;
+    grid-template-columns: 80px auto;
     width: 100%;
+    font-size: .8em;
+    align-items: center;
 }
 
 #main-content {
@@ -65,15 +89,58 @@ label {
 .main-content aside {
     background-color: #fff;
     padding: 3%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+    border-radius: 30px;
 }
 
 aside nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+#user-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-info button {
+    width: 100%;
+    background-color: #e7b900;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 10vw;
+    padding: 5%;
+    box-shadow: 0px 3px #e7a200;
+}
+
+aside p {
+    font-weight: 700;
+}
+
+aside input {
+    border-bottom: 2px solid #e7b900;
+}
+
+aside input:focus {
+    outline: none;
+}
+
+aside nav {
+    display: flex;
+    width: 100%;
+}
+
+nav button {
+    width: 100%;
+    padding: 10%;
 }
 
 aside button {
@@ -84,7 +151,7 @@ aside button {
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    padding: 10%;
+    border-radius: 20px;
 }
 
 button i {
@@ -98,4 +165,21 @@ button i {
 
 #blackjack {
     display: none;
+}
+
+#go-login, #go-signup {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+}
+
+footer {
+    font-size: .8em;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+footer a {
+    color: inherit;
 }

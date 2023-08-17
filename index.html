@@ -5,75 +5,87 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FAKE CASINO</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/blackjack.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <h1>FAKE CASINO</h1>
-        <section class="login" id="login">
-            <h3>Login</h3>
-            <form>
-                <input type="text" id="username" name="username" placeholder="Username">
-                <input type="password" id="password" name="password" placeholder="Password">
-                <input type="submit" value="Login" id="login-btn">
-            </form>
-            <button id="go-signup">Do you wanna Sign up?</button>
-        </section>
-        <section class="signup" id="signup">
-            <h3>Signup</h3>
-            <form>
-                <input type="text" id="username" name="username" placeholder="Username">
-                <input type="password" id="password" name="password" placeholder="Password">
-                <label for="coins">Coins: <input type="number" name="coins" id="coins"></label>
-                <label for="coins">Tickets: <input type="number" name="tickets" id="tickets"></label>
-                <input type="submit" value="Signup" id="signup-btn">
-            </form>
-            <button id="go-login">Do you wanna Log in?</button>
-        </section>
-        <section class="main-content" id="main-content">
-            <aside>
-                <p>Hello! <span id="print-username"></span></p>
-                <nav>
-                    <button id="slot-btn">
-                        <i class="fa-solid fa-circle-dollar-to-slot"></i> Slot Machine</button>
-                    <button id="blackjack-btn">
-                        <i class="fa-solid fa-heart"></i> Blackjack
-                    </button>
-                </nav>
-                <div id="user-info">
-                    <input type="text" name="changeName" id="change-name" placeholder="Write new username">
-                    <button id="change-btn">Change Username</button>
-                </div>
-            </aside>
-            <section class="slotmachine" id="slotmachine">
-                <div class="slotmachine-section" id="slot-area"></div>
-                <div id="spin">Spin</div>
-                <button id="bet-button">Bet</button> <!-- ベットボタン -->
-                <input type="number" id="bet-input" placeholder="Bet amount"> <!-- ベット額入力欄 -->
-                <div id="result-display"></div> <!-- 結果表示のための要素 -->
-                <div id="coins-display"></div>
+        <main>
+            <h1>FAKE CASINO</h1>
+            <!-- Log in -->
+            <section class="login" id="login">
+                <h3>Log In</h3>
+                <form>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="submit" value="Login" id="login-btn">
+                </form>
+                <button id="go-signup">Do you wanna Sign up?</button>
             </section>
-            <section class="blackjack" id="blackjack">
-                <h3>Blackjack</h3>
-                <div class="blackjack-body">
-                    <div class="blackjack-options">
-                        <input type="button" id="startBtn" class="btn" value="start">
-                        <input type="button" class="btn" value="hit me" id="hitBtn">
-                        <input type="button" class="btn" value="stay" id="stayBtn">
-                    </div>
-                    <div class="status" id="status"></div>
-                    <div id="deck" class="deck">
-                        <div id="deckcount">52</div>
-                    </div>
-                    <div id="players" class="players"></div>
-                    <div class="clear"></div>
-                </div>
+            <!-- Sign up -->
+            <section class="signup" id="signup">
+                <h3>Sign Up</h3>
+                <form>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <label for="coins">Coins: <input type="number" name="coins" id="coins"></label>
+                    <label for="coins">Tickets: <input type="number" name="tickets" id="tickets"></label>
+                    <input type="submit" value="Signup" id="signup-btn">
+                </form>
+                <button id="go-login">Do you wanna Log in?</button>
             </section>
-        </section>
+            <!-- Main content -->
+            <section class="main-content" id="main-content">
+                <!-- Sidebar for Nav and User information -->
+                <aside>
+                    <p>Hello! <span id="print-username"></span></p>
+                    <nav>
+                        <button id="slot-btn">
+                            <i class="fa-solid fa-circle-dollar-to-slot"></i> Slot Machine</button>
+                        <button id="blackjack-btn">
+                            <i class="fa-solid fa-heart"></i> Blackjack
+                        </button>
+                    </nav>
+                    <div id="user-info">
+                        <input type="text" name="changeName" id="change-name" placeholder="Write new username">
+                        <button id="change-btn">Change Username</button>
+                    </div>
+                </aside>
+                <!-- Slot machine game -->
+                <section class="slotmachine" id="slotmachine">
+                    <div class="slotmachine-section" id="slot-area"></div>
+                    <div id="spin">Spin</div>
+                    <button id="bet-button">Bet</button> <!-- ベットボタン -->
+                    <input type="number" id="bet-input" placeholder="Bet amount"> <!-- ベット額入力欄 -->
+                    <div id="result-display"></div> <!-- 結果表示のための要素 -->
+                    <div id="coins-display"></div>
+                </section>
+                <!-- Blackjack game -->
+                <section class="blackjack" id="blackjack">
+                    <h3>Blackjack</h3>
+                    <div class="blackjack-body">
+                        <div class="blackjack-options">
+                            <input type="button" id="startBtn" class="btn" value="start">
+                            <input type="button" class="btn" value="hit me" id="hitBtn">
+                            <input type="button" class="btn" value="stay" id="stayBtn">
+                        </div>
+                        <div class="status" id="status"></div>
+                        <div id="deck" class="deck">
+                            <div id="deckcount">52</div>
+                        </div>
+                        <div id="players" class="players"></div>
+                        <div class="clear"></div>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            Copyright &copy; 2023 <a href="https://github.com/meow0222/casino-client" target="_blank">@meow0222</a> & <a href="https://github.com/hyerim511/casino-server" target="_blank">@hyerim511</a> 
+        </footer>
 
-        <!-- jQuery 3.7.0 minified -->
+        <!-- Script -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
         crossorigin="anonymous"></script>
